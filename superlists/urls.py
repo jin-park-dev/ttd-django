@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.urls import path, re_path
 from lists import views
 
+# from lists.apps import ListsConfig
+
+# app_name.name = ListsConfig.name
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$', views.home_page, name='home')
