@@ -6,3 +6,5 @@ geckodriver.log
 __pycache__
 *.pyc
 .idea
+/static
+/static_collect
