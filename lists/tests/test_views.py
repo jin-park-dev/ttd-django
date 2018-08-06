@@ -6,6 +6,7 @@ from django.utils.html import escape
 
 from lists.models import Item, List
 from lists.views import home_page
+from lists.forms import ItemForm
 
 
 class HomePageTest(TestCase):
