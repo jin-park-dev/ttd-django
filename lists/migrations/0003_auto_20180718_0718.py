@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('lists', '0002_item_text'),
+        ('lists', '0002_text'),
     ]
 
     operations = [
