@@ -12,7 +12,7 @@ from lists.models import Item
 #     )
 
 EMPTY_ITEM_ERROR = "You can't have am empty list item"
-DUPLICATE_ITEM_ERROR = "You've already got htis in your list"    
+DUPLICATE_ITEM_ERROR = "You've already got this in your list"    
 
 
 class ItemForm(forms.models.ModelForm):
@@ -34,6 +34,7 @@ class ItemForm(forms.models.ModelForm):
         self.instance.list = for_list
         return super().save()
 
+
 # self.instance is model class
 class ExistingListItemForm(ItemForm):
     
@@ -48,3 +49,7 @@ class ExistingListItemForm(ItemForm):
         except ValidationError as e:
             e.error_dict = {'text': [DUPLICATE_ITEM_ERROR]}
             self._update_errors(e)
+            
+    # Personal opinion here: I could have used super, but I prefer not to use super when it requires arguments, say, to get a grandparent method. I find Python 3’s super() with no args awesome to get the immediate parent. Anything else is too error-prone, and I find it ugly besides. YMMV. 
+    def save(self):
+        return forms.models.ModelForm.save(self)
