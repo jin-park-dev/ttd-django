@@ -30,7 +30,7 @@
 
 {% if messages %}
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-8 offset-2 mt-2">
       {% for message in messages %}
         {% if message.level_tag == 'success' %}
             <div class="alert alert-success">{{ message }}</div>

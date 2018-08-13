@@ -8,3 +8,4 @@ __pycache__
 .idea
 /static
 /static_collect
+.env
