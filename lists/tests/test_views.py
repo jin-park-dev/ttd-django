@@ -127,7 +127,6 @@ class ListViewTest(TestCase):
         self.assertEqual(Item.objects.all().count(), 1)
 
 
-
 class NewListTest(TestCase):
     
     def test_can_save_a_POST_request(self):
