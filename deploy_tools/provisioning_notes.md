@@ -37,7 +37,7 @@ Assume we have a user account at /home/username
     │    ├── db.sqlite3
     │    ├── manage.py etc
     │    ├── static
-    │    └── virtualenv
+    │    └── .venv
     └── DOMAIN2
          ├── .env
          ├── db.sqlite3
