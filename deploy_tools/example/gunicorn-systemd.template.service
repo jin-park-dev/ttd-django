@@ -1,0 +1,13 @@
+[Unit]
+Description=gunicorn daemon for ttd test from ocean
+After=network.target
+
+[Service]
+User=jin
+Group=www-data
+WorkingDirectory=/home/jin/sites/staging-ttd-django
+EnvironmentFile=/home/jin/sites/staging-ttd-django/.env
+ExecStart=/home/jin/sites/staging-ttd-django/.venv/bin/gunicorn --access-logfile - --workers 3 --bind unix:/tmp/staging-ttd-django.socket superlists.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
