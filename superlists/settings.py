@@ -145,7 +145,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
-# Logging for erros
+# Logging for errors
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
