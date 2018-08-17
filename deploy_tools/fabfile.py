@@ -54,4 +54,4 @@ def _update_database():
 
 
 def _restart_gunicorn():
-    run(f'sudo systemctl restart gunicorn_{env.host}.service')
+    run(f'sudo systemctl restart gunicorn-{env.host}.service')
