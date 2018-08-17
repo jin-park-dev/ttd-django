@@ -13,6 +13,7 @@ def deploy():
         _create_or_update_dotenv()
         _update_static_files()
         _update_database()
+        _restart_gunicorn()
 
 
 def _get_latest_source():
@@ -50,3 +51,7 @@ def _update_static_files():
 
 def _update_database():
     run('./.venv/bin/python manage.py migrate --noinput')
+
+
+def _restart_gunicorn():
+    run(f'sudo systemctl restart gunicorn_{env.host}.service')
