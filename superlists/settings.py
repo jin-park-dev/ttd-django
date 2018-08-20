@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,11 +25,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if 'DJANGO_DEBUG_FALSE' in os.environ:  
     DEBUG = False
     SECRET_KEY = os.environ['DJANGO_SECRET_KEY']  
-    ALLOWED_HOSTS = [os.environ['SITENAME']]  
+    ALLOWED_HOSTS = [os.environ['SITENAME']]
+    # EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+    EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
 else:
     DEBUG = True  
     SECRET_KEY = 'insecure-key-for-dev'
     ALLOWED_HOSTS = []
+    EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
+
 
 
 # Application definition
@@ -168,6 +173,5 @@ LOGGING = {
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'onegenetest@gmail.com'
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True

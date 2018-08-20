@@ -51,3 +51,7 @@ def new_list(request):
     #     return render(request, 'home.html', {"error": error})
     # return redirect('view_list', list_.id) # If I don't have get_absolute_url in models use this
     # return redirect(list_)
+
+
+def my_lists(request, email):
+    return render(request, 'my_lists.html')
