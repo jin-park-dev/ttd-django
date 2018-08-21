@@ -83,6 +83,6 @@ class MyListsTest(FunctionalTest):
         self.get_item_input_box().send_keys(item_text)
         self.get_item_input_box().send_keys(Keys.ENTER)
         item_number = num_rows + 1
-        print(f'num_rows = {num_rows}')
-        print(f'{item_number}: {item_text}')
+        # print(f'num_rows = {num_rows}')
+        # print(f'{item_number}: {item_text}')
         self.wait_for_row_in_list_table(f'{item_number}: {item_text}')
