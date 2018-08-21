@@ -1,4 +1,3 @@
-
 db.sqlite3
 geckodriver.log
 .venv
@@ -8,5 +7,4 @@ __pycache__
 .idea
 /static
 /static_collect
-.env
-
+deploy_tools/example/.env
