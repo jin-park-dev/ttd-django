@@ -1,5 +1,6 @@
 from unittest import skip
 from selenium import webdriver
+from selenium.webdriver import FirefoxOptions
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import WebDriverException
 
@@ -68,7 +69,12 @@ class NewVisitortest(FunctionalTest):
         ## We use a browser session to make sure that no information
         ## of Edith's is coming through from cookies etc
         self.browser.quit()
-        self.browser = webdriver.Firefox()
+        # For headless
+
+        opts = FirefoxOptions()
+        opts = FirefoxOptions(firefox_options=opts)
+        opts.add_argument("--headless")
+        self.browser = webdriver.Firefox(firefox_options=opts)
 
         # Francis visits the home page. There is no sign of Edith's
         # list
