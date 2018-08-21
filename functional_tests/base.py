@@ -29,7 +29,6 @@ class FunctionalTest(StaticLiveServerTestCase):
 
         # For headless
         opts = FirefoxOptions()
-        opts = FirefoxOptions(firefox_options=opts)
         opts.add_argument("--headless")
         self.browser = webdriver.Firefox(firefox_options=opts)
 
