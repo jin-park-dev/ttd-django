@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path, include
+from django.views.generic.base import RedirectView
+from django.conf import settings
 
 from lists import views as list_views
 from lists import urls as list_urls
@@ -29,4 +31,5 @@ urlpatterns = [
     re_path(r'^$', list_views.home_page, name='home'),
     re_path(r'^lists/', include(list_urls)),
     re_path(r'^accounts/', include(accounts_urls, namespace='accounts')),
+    path('favicon.ico', RedirectView.as_view(url=settings.STATIC_URL + 'favicon.ico')),
 ]
