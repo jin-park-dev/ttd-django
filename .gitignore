@@ -8,3 +8,4 @@ __pycache__
 /static
 /static_collect
 deploy_tools/example/.env
+functional_tests/screendumps
